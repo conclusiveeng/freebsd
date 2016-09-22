@@ -1,0 +1,1 @@
+camdd.full: /usr/lib/libc.a /usr/lib/libcam.a /usr/lib/libmt.a /usr/lib/libutil.a /usr/lib/libpthread.a
