@@ -1,4 +1,6 @@
 # $FreeBSD$
 
 arm/microchip/sama5/sama5_machdep.c		standard
+arm/microchip/sama5/sama5_pit.c			standard
+arm/microchip/sama5/sama5_pmc.c			standard
 arm/microchip/sama5/sama5_uart.c		optional	uart

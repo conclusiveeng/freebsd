@@ -56,7 +56,7 @@ sama5_devmap_init(platform_t plat)
 {
 
 	devmap_add_entry(0xfc069000, 0x1000); /* CHIPID */
-	devmap_add_entry(0xf801c000, 0x4000); /* UART */
+	devmap_add_entry(0xf8020000, 0x4000); /* UART */
 	return (0);
 }
 

@@ -47,7 +47,7 @@ __FBSDID("$FreeBSD$");
 
 #include "uart_if.h"
 
-#define	DEFAULT_RCLK			83000000
+#define	DEFAULT_RCLK			0 //83000000
 #define	USART_DEFAULT_FIFO_BYTES	128
 
 #define	USART_DCE_CHANGE_BITS	(USART_CSR_CTSIC | USART_CSR_DCDIC | \
@@ -259,7 +259,7 @@ sama5_uart_init(struct uart_bas *bas, int baudrate, int databits, int stopbits,
 	 */
 	if (!(RD4(bas, USART_CSR) & USART_CSR_TXRDY))
 		DELAY(10000);
-
+	
 	sama5_uart_param(bas, baudrate, databits, stopbits, parity);
 
 	/* Reset the rx and tx buffers and turn on rx and tx */
@@ -584,8 +584,8 @@ struct uart_class sama5_uart_class = {
 };
 
 static struct ofw_compat_data compat_data[] = {
-	{"atmel,sama5rm9200-usart",(uintptr_t)&sama5_uart_class},
-	{"atmel,sama5sam9260-usart",(uintptr_t)&sama5_uart_class},
+	{"atmel,at91rm9200-usart",(uintptr_t)&sama5_uart_class},
+	{"atmel,at91sam9260-usart",(uintptr_t)&sama5_uart_class},
 	{NULL,			(uintptr_t)NULL},
 };
 
